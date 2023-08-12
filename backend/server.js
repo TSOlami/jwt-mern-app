@@ -9,4 +9,4 @@ const app = express();
 
 app.get('/', (req, res) => res.send('Server is ready'));
 
-app.listen(port, () => console.log('Server is started on port ${port}'));
+app.listen(port, () => console.log(`Server is started on port ${port}`));
