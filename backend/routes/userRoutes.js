@@ -8,6 +8,7 @@ import {
 	updateUserProfile
 } from "../controllers/userController.js";
 
+router.post('/', registerUser);
 router.post('/auth', authUser);
 
 export default router;
