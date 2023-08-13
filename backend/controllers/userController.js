@@ -1,4 +1,4 @@
-import asyncHandler from express-asnyc-handler;
+import asyncHandler from 'express-async-handler';
 
 // @desc	Authenticate user/set token
 // Route	post  /api/user/auth
