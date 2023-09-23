@@ -11,7 +11,9 @@ import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 
-app.use('/api/users', userRoutes);
+const apiVersion = process.env.API_VERSION || 'v1';
+
+app.use(`/api/${apiVersion}/users`, userRoutes);
 
 app.get('/', (req, res) => res.send('Server is ready'));
 
