@@ -1,0 +1,6 @@
+express
+dotenv
+mongoose
+bcryptjs
+jsonwebtoken
+cookie-parser
