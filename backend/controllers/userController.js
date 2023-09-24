@@ -29,7 +29,7 @@ const authUser = asyncHandler(async (req, res) => {
 // Route	post  /api/v1/users
 // access	Public
 const registerUser = asyncHandler(async (req, res) => {
-	const { name, username, email, password } = req.body;
+	const { name, username, email, password, role } = req.body;
 	// Check if email or username already exists
   const existingUser = await User.findOne({
     $or: [{ email }, { username }],
@@ -40,11 +40,15 @@ const registerUser = asyncHandler(async (req, res) => {
     throw new Error('Email or username already exists');
   }
 
+  // By default, set the user's role to "user" if it's not specified
+  const userRole = role || 'user';
+
 	const user = await User.create({
 		name,
 		username,
 		email,
-		password
+		password,
+    role: userRole,
 	});
     if (user) {
       generateToken(res, user._id);
@@ -52,7 +56,8 @@ const registerUser = asyncHandler(async (req, res) => {
 			_id: user._id,
 			name: user.name,
 			username: user.username,
-			email: user.email
+			email: user.email,
+      role: user.role,
 		});
 	} else {
 		res.status(400);
@@ -88,7 +93,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 });
 
 // @desc	Update user profile
-// Route	PUT  /api/v1/user/profile
+// Route	PUT  /api/v1/users/profile
 // access	Private
 const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
@@ -137,35 +142,31 @@ const updateUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc Get all blog posts and sort by timestamp
-// Route GET /api/v1/user/blogs
-// Access Public
-const getAllBlogPosts = asyncHandler(async (req, res) => {
-  // Fetch all blog posts from the database and sort by timestamp in descending order
-  const allBlogPosts = await BlogPost.find()
-    .populate('user') // 'user' is the field referencing the user who posted the blog
-    .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
+// @desc Delete a user account
+// Route DELETE /api/v1/users/profile
+// Access Private
+const deleteUserProfile = asyncHandler(async (req, res) => {
+  const user = await User.findById(req.user._id);
 
-  res.status(200).json(allBlogPosts);
+  if (user) {
+    // Perform any necessary cleanup or data removal associated with the user
+    // ...
+
+    // Remove the user from the database
+    await user.remove();
+
+    // Respond with a success message
+    res.status(200).json({ message: 'User account deleted successfully' });
+  } else {
+    res.status(404);
+    throw new Error('User not found');
+  }
 });
 
-// @desc Get user's blog posts (My Blog)
-// Route GET /api/v1/user/blog
-// Access Private
-const getUserBlogPosts = asyncHandler(async (req, res) => {
-  const userId = req.user._id; // Get the user ID from the authenticated user
-
-  // Fetch the user's blog posts from the database
-  const userBlogPosts = await BlogPost.find({ user: userId })
-  .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
-
-  res.status(200).json(userBlogPosts);
-}); 
-
 // @desc Create a new blog post
-// Route POST /api/v1/user/blog
-// Access Private (assuming users need to be logged in to create a blog post)
-const createBlogPost = asyncHandler(async (req, res) => {
+// Route POST /api/v1/users/blog
+// Access Private
+const postBlogPost = asyncHandler(async (req, res) => {
   const { title, content } = req.body;
 
   // You can access the currently logged-in user's information from req.user
@@ -184,29 +185,82 @@ const createBlogPost = asyncHandler(async (req, res) => {
   res.status(201).json(createdBlogPost);
 });
 
+// @desc Get all blog posts and sort by timestamp
+// Route GET /api/v1/user/blogs
+// Access Public
+const getAllBlogPosts = asyncHandler(async (req, res) => {
+  // Fetch all blog posts from the database and sort by timestamp in descending order
+  const allBlogPosts = await BlogPost.find()
+    .populate('user') // 'user' is the field referencing the user who posted the blog
+    .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
+
+  res.status(200).json(allBlogPosts);
+});
+
+// @desc Get user's blog posts (My Blog)
+// Route GET /api/v1/users/blog
+// Access Private
+const getUserBlogPosts = asyncHandler(async (req, res) => {
+  const userId = req.user._id; // Get the user ID from the authenticated user
+
+  // Fetch the user's blog posts from the database
+  const userBlogPosts = await BlogPost.find({ user: userId })
+  .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
+
+  res.status(200).json(userBlogPosts);
+});
+
+// @desc	Update user blog
+// Route	PUT  /api/v1/users/blog
+// access	Private
+const updateBlogPost = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: 'Update Blog Post' });
+});
+
+// @desc	Delete user blog
+// Route	DELETE  /api/v1/users/blog
+// access	Private
+const deleteBlogPost = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: 'Delete Blog Post' });
+});
+
+// @desc Create user resources
+// Route POST /api/v1/users/resources
+// Access Private
+const postUserResources = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: 'Post user Resources' });
+});
+
 // @desc	Get user resources
-// Route	GET  /api/v1/user/Resources
+// Route	GET  /api/v1/users/Resources
 // access	Private
 const getUserResources = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'User Resources' });
 });
 
-// @desc	Post a user resources
-// Route	POST  /api/v1/user/resources
+// @desc	Update a user resources
+// Route	PUT  /api/v1/users/resources
 // access	Private
-const postUserResources = asyncHandler(async (req, res) => {
-	res.status(200).json({ message: 'Post user Resources' });
+const updateUserResources = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: 'Update user Resources' });
 });
 
+// @desc	Delete user resources
+// Route	DELETE  /api/v1/users/resources
+// access	Private
+const deleteUserResources = asyncHandler(async (req, res) => {
+	res.status(200).json({ message: 'Delete Blog Post' });
+}); 
+
 // @desc	Get user payments history
-// Route	GET  /api/v1/user/payments
+// Route	GET  /api/v1/users/payments
 // access	Private
 const getUserPayment = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'User payments history' });
 });
 
 // @desc	Send a user payments
-// Route	POST  /api/v1/user/payments
+// Route	POST  /api/v1/users/payments
 // access	Private
 const postUserPayment = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'Payment sent' });
@@ -218,11 +272,16 @@ export {
 	logoutUser,
 	getUserProfile,
 	updateUserProfile,
+  deleteUserProfile,
+  postBlogPost,
 	getAllBlogPosts,
 	getUserBlogPosts,
-  createBlogPost,
-	getUserPayment,
-	postUserPayment,
+  updateBlogPost,
+  deleteBlogPost,
+  postUserResources,
 	getUserResources,
-	postUserResources
+  updateUserResources,
+  deleteUserResources,
+  postUserPayment,
+	getUserPayment,
 };

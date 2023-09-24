@@ -6,15 +6,20 @@ import {
 	logoutUser,
 	getUserProfile,
 	updateUserProfile,
+  deleteUserProfile,
+  postBlogPost,
 	getAllBlogPosts,
 	getUserBlogPosts,
-	createBlogPost,
-	getUserPayment,
-	postUserPayment,
+  updateBlogPost,
+  deleteBlogPost,
+  postUserResources,
 	getUserResources,
-	postUserResources
+  updateUserResources,
+  deleteUserResources,
+  postUserPayment,
+	getUserPayment,
 } from "../controllers/userController.js";
-import { protect } from "../middleware/authMiddleware.js";
+import { protect, isAdmin } from "../middleware/authMiddleware.js";
 
 // Register a new user
 router.post('/', registerUser);
@@ -25,26 +30,37 @@ router.post('/auth', authUser);
 // Logout a user
 router.post('/logout', logoutUser);
 
-// Get and update a user profile
-router.route('/profile')
+// Get, update and delete a user profile
+router
+.route('/profile')
 .get(protect, getUserProfile)
-.put(protect, updateUserProfile);
+.put(protect, updateUserProfile)
+.delete(protect, deleteUserProfile);
 
-// Get and post a user blogs
-router.route('/blog')
+// Route for getting all blog posts
+router
+.route("/blogs")
+.get(protect, getAllBlogPosts);
+
+// Get, create, update and delete user blogs
+router
+.route('/blog')
 .get(protect, getUserBlogPosts)
-.post(protect, createBlogPost);
+.post(protect, postBlogPost)
+.put(protect, updateBlogPost)
+.delete(protect, deleteBlogPost);
 
-// New route for getting all blog posts
-router.route("/blogs").get(protect, getAllBlogPosts);
-
-// Get and post a user resources
-router.route('/resources')
+// Get, create, update and delete user resources
+router
+.route('/resources')
 .get(protect, getUserResources)
-.post(protect, postUserResources);
+.post(protect, postUserResources)
+.put(protect, updateUserResources)
+.delete(protect, deleteUserResources);
 
-// Get and post a user payments history
-router.route('/payments')
+// Get and create a user payments history
+router
+.route('/payments')
 .get(protect, getUserPayment)
 .post(protect, postUserPayment);
 

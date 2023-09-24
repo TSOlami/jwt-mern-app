@@ -65,6 +65,10 @@ const userSchema = mongoose.Schema(
       type: Boolean,
       default: false, // Default to false
     },
+    role: {
+      type: String,
+      default: 'user', // Default role is 'user'
+    },
   },
   {
     timestamps: true,

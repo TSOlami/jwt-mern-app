@@ -8,6 +8,7 @@ connectDb();
 const port = process.env.PORT || 5000
 
 import userRoutes from './routes/userRoutes.js';
+import adminRoutes from './routes/adminRoutes.js';
 
 const app = express();
 app.use(express.json());
@@ -17,6 +18,7 @@ app.use(cookieParser());
 const apiVersion = process.env.API_VERSION || 'v1';
 
 app.use(`/api/${apiVersion}/users`, userRoutes);
+app.use(`/api/${apiVersion}/admin`, adminRoutes);
 
 app.get('/', (req, res) => res.send('Server is ready'));
 
