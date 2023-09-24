@@ -1,9 +1,11 @@
 import asyncHandler from 'express-async-handler';
 import generateToken from '../utils/generateToken.js';
 import User from '../models/userModel.js';
+import BlogPost from '../models/blogPostModel.js';
+
 
 // @desc	Authenticate user/set token
-// Route	post  /api/user/auth
+// Route	post  /api/v1/users/auth
 // access	Public
 const authUser = asyncHandler(async (req, res) => {
 	const { email, password } = req.body;
@@ -17,7 +19,6 @@ const authUser = asyncHandler(async (req, res) => {
     username: user.username,
     email: user.email
   });
-  console.log('User Logged In:', user);
 	} else {
 		res.status(401);
     throw new Error('Invalid email or password')
@@ -25,7 +26,7 @@ const authUser = asyncHandler(async (req, res) => {
 });
 
 // @desc	Resgister a new user/set token
-// Route	post  /api/user
+// Route	post  /api/v1/users
 // access	Public
 const registerUser = asyncHandler(async (req, res) => {
 	const { name, username, email, password } = req.body;
@@ -53,7 +54,6 @@ const registerUser = asyncHandler(async (req, res) => {
 			username: user.username,
 			email: user.email
 		});
-    console.log('User Created:', user);
 	} else {
 		res.status(400);
     throw new Error('Invalid user data')
@@ -61,7 +61,7 @@ const registerUser = asyncHandler(async (req, res) => {
 });
 
 // @desc	Logout user
-// Route	post  /api/user/logout
+// Route	post  /api/v1/users/logout
 // access	Public
 const logoutUser = asyncHandler(async (req, res) => {
   res.cookie('jwt', '', {
@@ -72,7 +72,7 @@ const logoutUser = asyncHandler(async (req, res) => {
 });
 
 // @desc	Get user profile
-// Route	GET  /api/user/profile
+// Route	GET  /api/v1/users/profile
 // access	Private
 const getUserProfile = asyncHandler(async (req, res) => {
 	const user = {
@@ -88,7 +88,7 @@ const getUserProfile = asyncHandler(async (req, res) => {
 });
 
 // @desc	Update user profile
-// Route	PUT  /api/user/profile
+// Route	PUT  /api/v1/user/profile
 // access	Private
 const updateUserProfile = asyncHandler(async (req, res) => {
   const user = await User.findById(req.user._id);
@@ -138,31 +138,32 @@ const updateUserProfile = asyncHandler(async (req, res) => {
 });
 
 // @desc Get all blog posts and sort by timestamp
-// Route GET /api/blog
+// Route GET /api/v1/user/blogs
 // Access Public
 const getAllBlogPosts = asyncHandler(async (req, res) => {
   // Fetch all blog posts from the database and sort by timestamp in descending order
   const allBlogPosts = await BlogPost.find()
-    .populate('user') // Assuming 'user' is the field referencing the user who posted the blog
+    .populate('user') // 'user' is the field referencing the user who posted the blog
     .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
 
   res.status(200).json(allBlogPosts);
 });
 
 // @desc Get user's blog posts (My Blog)
-// Route GET /api/user/blog
+// Route GET /api/v1/user/blog
 // Access Private
 const getUserBlogPosts = asyncHandler(async (req, res) => {
   const userId = req.user._id; // Get the user ID from the authenticated user
 
   // Fetch the user's blog posts from the database
-  const userBlogPosts = await BlogPost.find({ user: userId });
+  const userBlogPosts = await BlogPost.find({ user: userId })
+  .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest posts first)
 
   res.status(200).json(userBlogPosts);
 }); 
 
 // @desc Create a new blog post
-// Route POST /api/blog
+// Route POST /api/v1/user/blog
 // Access Private (assuming users need to be logged in to create a blog post)
 const createBlogPost = asyncHandler(async (req, res) => {
   const { title, content } = req.body;
@@ -184,28 +185,28 @@ const createBlogPost = asyncHandler(async (req, res) => {
 });
 
 // @desc	Get user resources
-// Route	GET  /api/user/Resources
+// Route	GET  /api/v1/user/Resources
 // access	Private
 const getUserResources = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'User Resources' });
 });
 
 // @desc	Post a user resources
-// Route	POST  /api/user/resources
+// Route	POST  /api/v1/user/resources
 // access	Private
 const postUserResources = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'Post user Resources' });
 });
 
 // @desc	Get user payments history
-// Route	GET  /api/user/payments
+// Route	GET  /api/v1/user/payments
 // access	Private
 const getUserPayment = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'User payments history' });
 });
 
 // @desc	Send a user payments
-// Route	POST  /api/user/payments
+// Route	POST  /api/v1/user/payments
 // access	Private
 const postUserPayment = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'Payment sent' });
