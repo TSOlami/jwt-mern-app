@@ -10,6 +10,9 @@ const postSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+    image: {
+      type: String, // Path or URL to the image
+    },
     user: {
       type: mongoose.Schema.Types.ObjectId,
       ref: 'User', // Reference to the user who created the post
