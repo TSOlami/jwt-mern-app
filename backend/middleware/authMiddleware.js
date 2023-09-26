@@ -1,15 +1,26 @@
-import jwt from 'jsonwebtoken';
-import asyncHandler from 'express-async-handler';
-import User from '../models/userModel.js';
+import jwt from 'jsonwebtoken'; // Import the 'jsonwebtoken' library for working with JSON Web Tokens (JWTs).
+import asyncHandler from 'express-async-handler'; // Import the 'express-async-handler' library for handling asynchronous errors.
+import User from '../models/userModel.js'; // Import the User model for querying user data from the database.
 
+/**
+ * Middleware to protect routes by verifying JWT tokens.
+ *
+ * @param {Object} req - Express request object.
+ * @param {Object} res - Express response object.
+ * @param {Function} next - Express next function.
+ */
 const protect = asyncHandler(async (req, res, next) => {
-	let token;
+  let token;
 
+  // Extract the JWT token from the request cookies.
   token = req.cookies.jwt;
 
   if (token) {
     try {
+      // Verify and decode the JWT token using the secret key.
       const decoded = jwt.verify(token, process.env.JWT_SECRET);
+
+      // Fetch the user associated with the decoded token, excluding the password field.
       req.user = await User.findById(decoded.userId).select('-password');
 
       next();
@@ -23,6 +34,13 @@ const protect = asyncHandler(async (req, res, next) => {
   }
 });
 
+/**
+ * Middleware to check if the user is an admin.
+ *
+ * @param {Object} req - Express request object.
+ * @param {Object} res - Express response object.
+ * @param {Function} next - Express next function.
+ */
 const isAdmin = (req, res, next) => {
   if (req.user && req.user.role === 'admin') {
     return next(); // User is an admin, continue with the request
