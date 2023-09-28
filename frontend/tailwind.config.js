@@ -18,7 +18,7 @@ export default {
     }, 
     extend: {
       fontFamily: {
-        Crimson: ['Crimson Text', 'sans-serif'],
+        crimson: ['Crimson Text', 'sans-serif'],
         montserrat: ['Montserrat', 'sans-serif'],
       },
       colors: {
