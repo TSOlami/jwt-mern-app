@@ -2,6 +2,7 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import cookieParser from 'cookie-parser';
+
 import { notFound, errorHandler } from './middleware/errormiddleware.js';
 import connectDb from './config/db.js';
 connectDb();
