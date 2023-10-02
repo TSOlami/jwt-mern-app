@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const postSchema = mongoose.Schema(
+const blogSchema = mongoose.Schema(
   {
     title: {
       type: String,
@@ -10,6 +10,10 @@ const postSchema = mongoose.Schema(
       type: String,
       required: true,
     },
+	tags: {
+		type: [String],
+		required: true,
+	  },
     image: {
       type: String, // Path or URL to the image
     },
@@ -22,12 +26,14 @@ const postSchema = mongoose.Schema(
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User', // Reference to users who upvoted the post
+        default: 0
       },
     ],
     downvotes: [
       {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User', // Reference to users who downvoted the post
+        default: 0
       },
     ],
   },
@@ -36,6 +42,6 @@ const postSchema = mongoose.Schema(
   }
 );
 
-const Post = mongoose.model('Post', postSchema);
+const Blog = mongoose.model('Blog', blogSchema);
 
-export default Post;
+export default Blog;
