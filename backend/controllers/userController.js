@@ -2,6 +2,7 @@ import asyncHandler from 'express-async-handler';
 import generateToken from '../utils/generateToken.js';
 import User from '../models/userModel.js';
 import Post from '../models/postModel.js';
+import Blog from '../models/blogModel.js';
 
 
 // @desc	Authenticate user/set token
@@ -163,8 +164,8 @@ const deleteUserProfile = asyncHandler(async (req, res) => {
   }
 });
 
-// @desc Create a new blog post
-// Route POST /api/v1/users/blog
+// @desc Create a new post
+// Route POST /api/v1/users/posts
 // Access Private
 const createPost = asyncHandler(async (req, res) => {
   const { title, content } = req.body;
@@ -172,14 +173,14 @@ const createPost = asyncHandler(async (req, res) => {
   // You can access the currently logged-in user's information from req.user
   const userId = req.user._id;
 
-  // Create a new blog post
+  // Create a new post
   const newPost = new Post({
     title,
     content,
     user: userId, // Associate the post with the user who created it
   });
 
-  // Save the new blog post to the database
+  // Save the new post to the database
   const createdPost = await newPost.save();
 
   res.status(201).json(createdPost);
@@ -221,7 +222,7 @@ const updatePost = asyncHandler(async (req, res) => {
 // Route	DELETE  /api/v1/users/posts
 // access	Private
 const deletePost = asyncHandler(async (req, res) => {
-	res.status(200).json({ message: 'Delete Blog Post' });
+	res.status(200).json({ message: 'Delete Post' });
 });
 
 // @desc Create user resources
@@ -229,6 +230,18 @@ const deletePost = asyncHandler(async (req, res) => {
 // Access Private
 const postUserResources = asyncHandler(async (req, res) => {
 	res.status(200).json({ message: 'Post user Resources' });
+});
+
+// @desc Get all blogs and sort by timestamp
+// Route GET /api/v1/user/blogs
+// Access Public
+const getAllBlogs = asyncHandler(async (req, res) => {
+  // Fetch all blogs from the database and sort by timestamp in descending order
+  const allBlogs = await Blog.find()
+    .populate('user') // 'user' is the field referencing the user who posted the blog
+    .sort({ timestamp: -1 }); // Sort by timestamp in descending order (latest blogs first)
+
+  res.status(200).json(allBlogs);
 });
 
 // @desc	Get user resources
@@ -249,8 +262,8 @@ const updateUserResources = asyncHandler(async (req, res) => {
 // Route	DELETE  /api/v1/users/resources
 // access	Private
 const deleteUserResources = asyncHandler(async (req, res) => {
-	res.status(200).json({ message: 'Delete Blog Post' });
-}); 
+	res.status(200).json({ message: 'Delete a Resource' });
+});
 
 // @desc	Get user payments history
 // Route	GET  /api/v1/users/payments
@@ -278,6 +291,7 @@ export {
 	getUserPosts,
   updatePost,
   deletePost,
+  getAllBlogs,
   postUserResources,
 	getUserResources,
   updateUserResources,

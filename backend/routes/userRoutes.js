@@ -7,11 +7,12 @@ import {
 	getUserProfile,
 	updateUserProfile,
   deleteUserProfile,
-  postBlogPost,
-	getAllBlogPosts,
-	getUserBlogPosts,
-  updateBlogPost,
-  deleteBlogPost,
+  createPost,
+	getAllPosts,
+	getUserPosts,
+  updatePost,
+  deletePost,
+  getAllBlogs,
   postUserResources,
 	getUserResources,
   updateUserResources,
@@ -37,18 +38,23 @@ router
 .put(protect, updateUserProfile)
 .delete(protect, deleteUserProfile);
 
-// Route for getting all blog posts
+// Route for getting all blogs
 router
 .route("/blogs")
-.get(protect, getAllBlogPosts);
+.get(protect, getAllBlogs);
 
-// Get, create, update and delete user blogs
+// Route for getting all posts
+router
+.route("/blogs")
+.get(protect, getAllPosts);
+
+// Get, create, update and delete user posts
 router
 .route('/blog')
-.get(protect, getUserBlogPosts)
-.post(protect, postBlogPost)
-.put(protect, updateBlogPost)
-.delete(protect, deleteBlogPost);
+.get(protect, getUserPosts)
+.post(protect, createPost)
+.put(protect, updatePost)
+.delete(protect, deletePost);
 
 // Get, create, update and delete user resources
 router
