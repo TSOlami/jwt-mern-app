@@ -1,11 +1,12 @@
-// Import required modules and packages
-import express from 'express'; // Express.js web framework
-import dotenv from 'dotenv'; // Load environment variables from a .env file
-dotenv.config(); // Initialize dotenv to load environment variables
-import cookieParser from 'cookie-parser'; // Parse cookies
-import { notFound, errorHandler } from './middleware/errormiddleware.js'; // Error handling middleware
-import connectDb from './config/db.js'; // Connect to the database
-connectDb(); // Call the function to establish a database connection
+import express from 'express';
+import dotenv from 'dotenv';
+dotenv.config();
+import cookieParser from 'cookie-parser';
+
+import { notFound, errorHandler } from './middleware/errormiddleware.js';
+import connectDb from './config/db.js';
+connectDb();
+const port = process.env.PORT || 5000
 
 // Define the port number for the server, default to 5000 if not provided in the environment
 const port = process.env.PORT || 5000;

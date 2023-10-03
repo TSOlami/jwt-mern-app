@@ -9,17 +9,24 @@ import { protect, isAdmin } from '../middleware/authMiddleware.js';
 // Import controllers for admin operations.
 import {
   getAllPayments,
-  // Add other admin controllers as needed
+  getUserBlogs,
+  createBlog,
+  updateBlog,
+  deleteBlog,
 } from '../controllers/adminController.js';
 
-/**
- * Get all payments (admin only).
- *
- * @route GET /api/v1/admin/all-payments
- * @access Private (Requires authentication and admin rights)
- */
+// Define admin routes and protect them with admin middleware
+
+// Get all users payments
 router.route('/all-payments').get(protect, isAdmin, getAllPayments);
 
-// Define other admin routes and their documentation here.
+// Get, create, update and delete user blogs
+router
+.route('/blog')
+.get(protect, isAdmin, getUserBlogs)
+.post(protect, isAdmin, createBlog)
+.put(protect,isAdmin, updateBlog)
+.delete(protect, isAdmin, deleteBlog);
+
 
 export default router;

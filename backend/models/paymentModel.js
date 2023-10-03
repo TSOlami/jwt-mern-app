@@ -5,7 +5,14 @@ import mongoose from 'mongoose';
  */
 const paymentSchema = mongoose.Schema(
   {
-    // The session identifier (e.g., academic session) for the payment.
+    matricNumber: {
+      type: String, // Matriculation number of the student
+    },
+    category: {
+      type: mongoose.Schema.Types.ObjectId, // Reference to the Category model
+      ref: 'Category',
+      required: true,
+    },
     session: {
       type: String,
       required: true,

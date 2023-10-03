@@ -22,6 +22,10 @@ const userSchema = mongoose.Schema(
       type: String,
       default: '',
     },
+    matricNumber: {
+      type: String,
+      unique: true,
+    },
     password: {
       type: String,
       required: true,
@@ -68,6 +72,7 @@ const userSchema = mongoose.Schema(
     },
     role: {
       type: String,
+      enum: ['user', 'admin'],
       default: 'user', // Default role is 'user'
     },
   },

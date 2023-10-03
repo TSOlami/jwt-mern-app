@@ -11,11 +11,12 @@ import {
   getUserProfile,
   updateUserProfile,
   deleteUserProfile,
-  postBlogPost,
-  getAllBlogPosts,
-  getUserBlogPosts,
-  updateBlogPost,
-  deleteBlogPost,
+  createPost,
+	getAllPosts,
+	getUserPosts,
+  updatePost,
+  deletePost,
+  getAllBlogs,
   postUserResources,
   getUserResources,
   updateUserResources,
@@ -64,45 +65,23 @@ router
   .put(protect, updateUserProfile)
   .delete(protect, deleteUserProfile);
 
-/**
- * Get all blog posts.
- *
- * @route GET /api/v1/users/blogs
- * @access Private (Requires authentication)
- */
-router.route("/blogs").get(protect, getAllBlogPosts);
-
-/**
- * Get, create, update, and delete user blogs.
- *
- * @route GET /api/v1/users/blog
- * @route POST /api/v1/users/blog
- * @route PUT /api/v1/users/blog
- * @route DELETE /api/v1/users/blog
- * @access Private (Requires authentication)
- */
+// Route for getting all blogs
 router
-  .route('/blog')
-  .get(protect, getUserBlogPosts)
-  .post(protect, postBlogPost)
-  .put(protect, updateBlogPost)
-  .delete(protect, deleteBlogPost);
+.route("/blogs")
+.get(protect, getAllBlogs);
 
-/**
- * Get, create, update, and delete user resources.
- *
- * @route GET /api/v1/users/resources
- * @route POST /api/v1/users/resources
- * @route PUT /api/v1/users/resources
- * @route DELETE /api/v1/users/resources
- * @access Private (Requires authentication)
- */
+// Route for getting all posts
 router
-  .route('/resources')
-  .get(protect, getUserResources)
-  .post(protect, postUserResources)
-  .put(protect, updateUserResources)
-  .delete(protect, deleteUserResources);
+.route("/blogs")
+.get(protect, getAllPosts);
+
+// Get, create, update and delete user posts
+router
+.route('/blog')
+.get(protect, getUserPosts)
+.post(protect, createPost)
+.put(protect, updatePost)
+.delete(protect, deletePost);
 
 /**
  * Get and create user payment history.
