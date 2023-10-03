@@ -18,7 +18,7 @@ const Landing = () => {
       <section className="padding">
         Contact Us
       </section>
-      <section className="padding">
+      <section className="padding bg-black padding-x padding-t pb-8">
         Footer
       </section>
     </main>
