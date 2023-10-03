@@ -1,25 +1,27 @@
+import { NavBar, Footer } from "../components"
+import { Hero, AboutUs, Features, FAQs, ContactUs } from "../sections"
 
 const Landing = () => {
   return (
     <main className="relative">
-      Nav
+      <NavBar />
       <section className="xl:padding-1 wide:padding-r padding-b">
-        Hero
+        <Hero />
       </section>
       <section className="padding">
-        About Us
+        <AboutUs />
       </section>
       <section className="padding">
-        Features
+        <Features />
       </section>
       <section className="padding">
-        FAQs
+        <FAQs />
       </section>
       <section className="padding">
-        Contact Us
+        <ContactUs />
       </section>
       <section className="padding bg-black padding-x padding-t pb-8">
-        Footer
+        <Footer />
       </section>
     </main>
   )
