@@ -74,6 +74,7 @@ const SignUp = () => {
 						onChange={formik.handleChange}
 						value={formik.values.fullName}
 						icon={<FaRegUser />}
+            pad
 					/>
 
 					{formik.touched.fullName && formik.errors.fullName ? (
@@ -91,6 +92,7 @@ const SignUp = () => {
 						onChange={formik.handleChange}
 						value={formik.values.username}
 						icon={<FaIdCard />}
+            pad
 					/>
 
 					{formik.touched.username && formik.errors.username ? (
@@ -108,6 +110,7 @@ const SignUp = () => {
 						onChange={formik.handleChange}
 						value={formik.values.email}
 						icon={<FaEnvelope />}
+            pad
 					/>
 
 					{formik.touched.email && formik.errors.email ? (
@@ -125,6 +128,7 @@ const SignUp = () => {
 							onChange={formik.handleChange}
 							value={formik.values.password}
 							icon={<FaLock />}
+              pad
 						/>
 						{showPassword ? (
 							<FaRegEyeSlash
