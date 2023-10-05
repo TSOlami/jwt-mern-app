@@ -1,6 +1,6 @@
 import { FaMagnifyingGlass } from "react-icons/fa6";
 import Post from "../components/Post";
-import Sidebar from "../components/Sidebar";
+import Sidebar from "../components/nav/Sidebar";
 import { mockTexts, mockTexts2 } from "../data";
 import AnnouncementContainer from "../components/AnnouncementContainer";
 

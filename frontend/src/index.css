@@ -35,7 +35,7 @@
 
   .logo-text {
     font-size: 2rem;
-    color: #333;
+    color: #000;
     font-weight: 700;
     font-family: Merriweather;
     font-style: normal;
@@ -80,10 +80,10 @@
   }
 
   .nav-text {
-    @apply font-crimson text-xl leading-normal;
+    @apply font-crimson font-normal text-xl leading-normal;
   }
   
   .header-text {
-    @apply font-merriweather text-3xl leading-normal;
+    @apply font-merriweather font-bold text-3xl leading-normal;
   }
 }
