@@ -1,7 +1,8 @@
 const style = {
     width: '100',
     height: '10%',
-    backgroundColor: 'red'
+    backgroundColor: '#FFFFFF',
+    borderBottom: "1px solid #B3B3B3"
 };
 
 const PageBox = () => {
