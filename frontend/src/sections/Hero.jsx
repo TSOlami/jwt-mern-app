@@ -10,7 +10,13 @@ const Hero = () => {
     <div className="rounded-3xl border border-black items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson">
     Unlock the World of Mathematics <span><img src={polygon} alt="polygon" /></span>
     </div>
-
+    <div className="header-text">
+    NAMSSN <br />
+    FUTMINNA Chapter
+    </div>
+    <div className="body-text">
+    Mathematics Department is hard like mad and i dont see wy a person would want a website designed for it. But i  would try to make it beautiful sha. Using Illustratons and images 
+    </div>
     </div>
 
   </section>

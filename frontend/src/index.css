@@ -84,6 +84,6 @@
   }
   
   .header-text {
-    @apply font-merriweather font-bold text-3xl leading-normal;
+    @apply font-merriweather font-bold text-4xl leading-normal;
   }
 }
