@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 
 @tailwind base;
@@ -20,6 +20,24 @@
 
   .input {
     @apply sm:flex-1 max-sm:w-full text-base leading-normal text-secondary pl-5 max-sm:p-5 outline-none sm:border-none border max-sm:border-secondary max-sm:rounded-full;
+  }
+
+  .logo-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .logo {
+    width: 4.75rem;
+    height: 4.75rem;
+    margin-right: 1rem;
+  }
+
+  .logo-text {
+    font-size: 2rem;
+    color: #333;
+    font-weight: 700;
+    font-style: normal;
   }
 }
 
@@ -55,4 +73,8 @@
   .info-text {
     @apply font-montserrat text-secondary text-lg leading-7;
   }
+  .body-text {
+    @apply font-crimson text-base leading-normal; /* Apply Crimson font and text styles to body text */
+  }
+  .header-text {}
 }

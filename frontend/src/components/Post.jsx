@@ -6,7 +6,7 @@ import {
 	BiSolidUpvote,
 	BiUpvote,
 } from "react-icons/bi";
-import Wrapper from "../assets/wrapper.png";
+import { Wrapper } from "../assets";
 
 const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, username }) => {
 	const date = new Date();

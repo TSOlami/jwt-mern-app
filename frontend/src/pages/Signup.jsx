@@ -1,7 +1,7 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
 import { useState } from "react";
-import Signup from "../assets/Signup.png";
+import { SignUpImage } from "../assets";
 import {
 	FaRegUser,
 	FaIdCard,
@@ -52,7 +52,7 @@ const SignUp = () => {
 			{/* Vector image container */}
 			<div className="bg-primary h-[20%] md:h-screen md:block w-full md:w-[40%]">
 				<img
-					src={Signup}
+					src={SignUpImage}
 					alt=""
 					className="relative h-[140%] m-auto md:h-auto md:right-[-15%] md:top-[10%]"
 				/>
