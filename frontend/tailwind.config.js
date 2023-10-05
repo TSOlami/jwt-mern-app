@@ -24,7 +24,8 @@ export default {
       colors: {
         "primary": "#17A1FA",
         "secondary": "#00000",
-        "tertiary": "#B3D5F7"
+        "tertiary": "#B3D5F7",
+        "greyish" : "#F3F3F3",
       },
       boxShadow: {
         '3xl': '0 10px 40px rgba(0, 0, 0, 0.1)'
