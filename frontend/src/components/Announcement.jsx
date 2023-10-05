@@ -7,7 +7,7 @@ const Announcement = ({title, content}) => {
       <div>
         {content?.map((text, index) => {
           return <div key={index} className="py-4">
-            <div className="flex flex-row items-center gap-2 font-semibold py-1">{text.user} {text.isAdmin && <FaCircleCheck/>}</div>
+            <div className="flex flex-row items-center gap-2 font-semibold py-1">{text.user} {text.isAdmin && <FaCircleCheck color="#17A1FA"/>}</div>
             <div>{text.content}</div>
           </div>
         })}
