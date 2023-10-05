@@ -6,6 +6,7 @@ import Landing from './pages/Landing';
 import Home from './pages/Home';
 import Resources from './pages/Resources';
 import PaymentPage from './pages/PaymentPage';
+import Profile from './pages/Profile';
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
       {/* <Route path='/signup' element={<Signup/>} /> */}
       <Route path='/home' element={<Home/>} />
       <Route path='/resources' element={<Resources/>} />
+      <Route path='/profile' element={<Profile/>}/>
     </Routes>
     </BrowserRouter>    
   )
