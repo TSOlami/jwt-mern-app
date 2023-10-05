@@ -9,7 +9,7 @@ const mainStyle = {
     width: "60%",
     height: "100",
     backgroundColor: "#FFFFFF",
-    borderRight: "1px solid #B3B3B3"
+    borderRight: "1px solid #B3B3B3",
 }
 
 const Resources = () => {
@@ -17,7 +17,7 @@ const Resources = () => {
         <div style={divStyle}>
             <Sidebar></Sidebar>
             <div style={mainStyle}>
-                <PageBox/>
+                <PageBox name="Learning Resources" />
                 <main></main>
             </div>
         </div>
