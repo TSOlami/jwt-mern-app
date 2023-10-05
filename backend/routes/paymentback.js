@@ -1,50 +1,74 @@
-// Import necessary modules
-import { Router } from 'express';
-import paystack from 'paystack';
-import axios from 'axios'; // Import Axios for making HTTP requests
+const express = require('express');
+const axios = require('axios');
+const app = express();
+const port = process.env.PORT || 3000;
 
-// Create an Express router instance
-const router = Router();
+app.use(express.json());
 
-// Initialize Paystack with your secret key from environment variables
-const paystackInstance = paystack(process.env.PAYSTACK_SECRET_KEY);
+const PAYSTACK_BASE_URL = 'https://api.paystack.co';
 
 // Define a POST route for initiating a payment
-router.post('/', async (req, res) => {
+app.post('/api/initiatePayment', async (req, res) => {
   try {
-    // Extract necessary data from the request body
-    const { email, amount } = req.body;
+    const { email, amount, callbackUrl } = req.body;
 
-    // Make a POST request to the Paystack Initialize Transaction endpoint
     const paystackResponse = await axios.post(
-      'https://api.paystack.co/transaction/initialize',
+      `${PAYSTACK_BASE_URL}/transaction/initialize`,
       {
         email,
         amount: amount * 100, // Convert amount to kobo
+        callback_url: callbackUrl, // Include the callback URL
       },
       {
         headers: {
-          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`, // Replace with your actual secret key
+          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
         },
       }
     );
 
-    // Check if the Paystack response was successful
     if (paystackResponse.data.status) {
-      const { authorization_url } = paystackResponse.data.data;
-
-      // Return the Paystack authorization URL in the response
-      res.json({ payment_url: authorization_url });
+      const { authorization_url, reference } = paystackResponse.data.data;
+      res.json({ payment_url: authorization_url, reference });
     } else {
-      // Handle the case where the payment initialization failed
       res.status(500).json({ error: 'Payment initiation failed' });
     }
   } catch (error) {
-    // Handle errors and send an error response
-    console.error('Error initiating payment:', error);
+    console.error('Error initiating payment:', error.response?.data);
     res.status(500).json({ error: 'Payment initiation failed' });
   }
 });
 
-// Export the router for use in other parts of your application
-export default router;
+// Define a GET route for verifying payment status
+app.get('/api/verifyPayment/:reference', async (req, res) => {
+  try {
+    const { reference } = req.params;
+
+    const verificationResponse = await axios.get(
+      `${PAYSTACK_BASE_URL}/transaction/verify/${reference}`,
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.PAYSTACK_SECRET_KEY}`,
+        },
+      }
+    );
+
+    if (verificationResponse.data.status) {
+      const transactionData = verificationResponse.data.data;
+      res.json({
+        reference: transactionData.reference,
+        status: transactionData.status,
+      });
+    } else {
+      res.status(500).json({ error: 'Payment verification failed' });
+    }
+  } catch (error) {
+    console.error('Error verifying payment:', error.response?.data);
+    res.status(500).json({ error: 'Payment verification failed' });
+  }
+});
+
+// ... Other routes and server setup ...
+
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
+});
