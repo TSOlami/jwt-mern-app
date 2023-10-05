@@ -6,7 +6,7 @@ import {
 	FaMoneyBill,
 	FaPerson,
 	FaArrowRightFromBracket,
-	FaCircleCheck,
+	FaCircleCheck
 } from "react-icons/fa6";
 
 const Sidebar = () => {
