@@ -7,7 +7,8 @@ export default function App() {
     <Routes>
       <Route path='/' exact element={<Landing/>} />
       <Route path='/signin' element={<SignIn/>} />
-      <Route path='/signup' element={<SignUp/>} />
+      <Route path='/signup' element={<Signup/>} />
+      <Route path='/home' element={<Home/>
     </Routes>
     </BrowserRouter>    
   )
