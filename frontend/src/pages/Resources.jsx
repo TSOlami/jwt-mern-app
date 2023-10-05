@@ -1,4 +1,5 @@
 import Sidebar from "../components/Sidebar"
+import PageBox from "../components/PageBox"
 
 const divStyle = {
     display: "flex"
@@ -15,7 +16,10 @@ const Resources = () => {
     return (
         <div style={divStyle}>
             <Sidebar></Sidebar>
-            <main style={mainStyle}></main>
+            <div style={mainStyle}>
+                <PageBox/>
+                <main></main>
+            </div>
         </div>
     )
 }
