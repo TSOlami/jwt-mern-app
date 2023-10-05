@@ -56,3 +56,17 @@
     @apply font-montserrat text-secondary text-lg leading-7;
   }
 }
+
+.search {
+  display: flex;
+  align-items: center;
+  color: #B3B3B3;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #B3B3B3;
+  border-radius: 20px;
+}
+
+.search:hover {
+  border: 2px solid #17A1FA66;
+}
