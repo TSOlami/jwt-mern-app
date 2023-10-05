@@ -6,21 +6,20 @@ import {
 	BiSolidUpvote,
 	BiUpvote,
 } from "react-icons/bi";
-import Wrapper from "../assets/wrapper.png";
 
-const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, username }) => {
+const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, username, avatar }) => {
 	const date = new Date();
 	const day = date.getDay();
 	const month = date.toLocaleString("default", { month: "long" });
 
 	return (
-		<div className="border-b-2 border-gray-900 p-4 flex flex-row gap-2 h-fit xl:w-[800px]">
+		<div className="border-b-2 border-gray-300 p-4 flex flex-row gap-2 h-fit min-w-[400px] md:min-w-[450px] lg:min-w-[500px] xl:w-[700px]">
 			<div>
-				<img src={Wrapper} alt="" />
+				<img src={avatar} alt="" />
 			</div>
 
-			<div className="flex flex-col gap-2">
-				<div className="flex flex-row gap-5">
+			<div className="flex flex-col gap-2 w-full">
+				<div className="flex flex-row gap-2 lg:gap-5">
 					<span className="font-semibold flex flex-row items-center gap-2">
 						{name}
             {isAdmin && <FaCircleCheck color="#17A1FA" />}
@@ -40,7 +39,7 @@ const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, userna
 
 				{/* Post actions */}
 
-				<div className="py-4 flex flex-row justify-between">
+				<div className="py-4 flex flex-row justify-between pr-5">
 					<div>
 						<span className="flex items-center gap-1">
 							{upvotes ? (
