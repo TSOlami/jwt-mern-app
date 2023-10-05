@@ -1,4 +1,5 @@
-import { NamssnLogo } from "../../assets"
+import { Hamburger, NamssnLogo } from "../../assets"
+import { navLinks } from "../../constants"
 
 const NavBar = () => {
   return (
@@ -8,11 +9,27 @@ const NavBar = () => {
         <a href="/">
           <img src={NamssnLogo} alt="Logo" className="logo" />
         </a>
-        <span className="text-3xl font-bold py-2 border-b-2">NAMSSN</span>
+        <span className="logo-text py-2">NAMSSN</span>
       </div>
-      <div className="flex  items-center">
-        <a href="/login" className="text-lg font-bold mr-4">Login</a>
-        <a href="/signup" className="text-lg font-bold">Sign Up</a>
+      <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
+        {navLinks.map((item) => (
+          <li key={item.label}>
+            <a
+            href={item.href}
+            className="body-text"
+            >
+            {item.label}
+            </a>
+          </li>
+        ))}
+      </ul>
+      <div className="hidden max-lg:block">
+        <img
+          src={Hamburger}
+          alt="Menu"
+          width={25}
+          height={25}
+        />
       </div>
     </nav>
   </header>

@@ -37,6 +37,7 @@
     font-size: 2rem;
     color: #333;
     font-weight: 700;
+    font-family: Merriweather;
     font-style: normal;
   }
 }
@@ -71,10 +72,18 @@
   }
 
   .info-text {
-    @apply font-montserrat text-secondary text-lg leading-7;
+    @apply font-merriweather text-secondary text-lg leading-7;
   }
+
   .body-text {
-    @apply font-crimson text-base leading-normal; /* Apply Crimson font and text styles to body text */
+    @apply font-crimson text-base leading-normal;
   }
-  .header-text {}
+
+  .nav-text {
+    @apply font-crimson text-xl leading-normal;
+  }
+  
+  .header-text {
+    @apply font-merriweather text-3xl leading-normal;
+  }
 }
