@@ -12,7 +12,7 @@ import {
 const Sidebar = () => {
 	const isAdmin = true;
 	return (
-		<div className= "w-64 bg-greyish h-screen flex flex-col gap-20 p-5">
+		<div className= "w-72 w- bg-greyish h-screen flex flex-col gap-20 p-5">
 			{/* profile info */}
 			<div className="pb-8">
 				<div>
