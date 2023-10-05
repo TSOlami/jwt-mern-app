@@ -40,6 +40,29 @@
     font-family: Merriweather;
     font-style: normal;
   }
+
+  .button-1 {
+    display: inline-flex;
+    padding: 0.4375rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.3125rem;
+    border: 1px solid #000;
+    color: #000;
+  }
+  
+  .button-2 {
+    display: inline-flex;
+    padding: 0.4375rem 1.25rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+    border-radius: 0.3125rem;
+    background: #000;
+    color: #FFF;
+  }
+  
 }
 
 @layer utilities {
@@ -85,5 +108,8 @@
   
   .header-text {
     @apply font-merriweather font-bold text-4xl leading-normal;
+  }
+  .text-container {
+    @apply rounded-3xl border border-black items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson;
   }
 }

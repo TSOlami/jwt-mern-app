@@ -4,6 +4,7 @@ import SignUpImage from './images/Signup.png';
 import Wrapper from './images/wrapper.png';
 import Hamburger from './icons/hamburger.svg';
 import polygon from './icons/polygon.svg';
+import heroImage from './images/hero.svg';
 
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon };
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage };
