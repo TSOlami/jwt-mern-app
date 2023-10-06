@@ -6,7 +6,7 @@ import Hamburger from './icons/hamburger.svg';
 import polygon from './icons/polygon.svg';
 import heroImage from './images/hero.svg';
 import searchIcon from './searchIcon.png';
-import Avatar from './avatar2.png';
+import Avatar from './images/avatar2.png';
 import aboutIcon from './icons/about.svg';
 import arrow from './icons/arrow.svg';
 
