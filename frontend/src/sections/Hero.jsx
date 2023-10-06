@@ -4,7 +4,7 @@ const Hero = () => {
   return (
 	<section
   id="hero"
-  className="w-full flex lg:flex-row flex-col justify-center min-h-screen gap-2 max-container"
+  className="w-full flex lg:flex-row flex-col justify-center min-h-screen items-center gap-2 max-container"
   >
     <div className="relative lg:w-3/5 flex flex-col justify-center items-start w-full padding-x pt-28">
     <div className="text-container">
@@ -17,12 +17,12 @@ const Hero = () => {
     <div className="body-text">
     Mathematics Department is hard like mad and i dont see wy a person would want a website designed for it. But i  would try to make it beautiful sha. Using Illustratons and images 
     </div>
-    <div className="flex py-5 gap-4">
+    <div className="flex flex-row justify-around w-full py-5 gap-4">
     <button className="button-1">Sign Up</button>
     <button className="button-2">Log In</button>
     </div>
     </div>
-    <div className="pt-40 px-28">
+    <div className="pt-5 px-10">
       <img
       src={heroImage}
       alt="Hero"
