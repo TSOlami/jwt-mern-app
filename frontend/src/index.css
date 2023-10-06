@@ -99,7 +99,7 @@
   }
 
   .body-text {
-    @apply font-crimson text-base leading-normal;
+    @apply font-crimson text-xl leading-normal;
   }
 
   .nav-text {
