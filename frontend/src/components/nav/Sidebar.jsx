@@ -8,8 +8,8 @@ import {
 	FaArrowRightFromBracket,
 	FaCircleCheck,
 } from "react-icons/fa6";
-import Avatar from "../assets";
 import { useEffect, useState } from "react";
+import Avatar from "../../assets/index";
 
 const Sidebar = () => {
 	const isAdmin = true;
