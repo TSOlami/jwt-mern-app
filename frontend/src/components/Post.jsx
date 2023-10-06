@@ -1,11 +1,5 @@
-import { FaCircleCheck, FaRegComment } from "react-icons/fa6";
-import {
-	BiDownvote,
-	BiShareAlt,
-	BiSolidDownvote,
-	BiSolidUpvote,
-	BiUpvote,
-} from "react-icons/bi";
+import { FaCircleCheck } from "react-icons/fa6";
+import Actions from "./Actions";
 
 const Post = ({ isAdmin, upvotes, downvotes, shares, comments, text, name, username, avatar }) => {
 	const date = new Date();
@@ -39,50 +33,11 @@ const Post = ({ isAdmin, upvotes, downvotes, shares, comments, text, name, usern
 
 				{/* Post actions */}
 
-				<div className="py-4 flex flex-row justify-between pr-5">
-					<div>
-						<span className="flex items-center gap-1">
-							{upvotes ? (
-								<>
-									<BiSolidUpvote color="#17A1FA" /> {upvotes}
-								</>
-							) : (
-								<>
-									<BiUpvote /> {0}{" "}
-								</>
-							)}
-						</span>
-						<span>Upvotes</span>
-					</div>
-					<div>
-						<span className="flex items-center gap-1">
-							{downvotes ? (
-								<>
-									{" "}
-									<BiSolidDownvote color="red" /> {downvotes}{" "}
-								</>
-							) : (
-								<>
-									{" "}
-									<BiDownvote /> {0}{" "}
-								</>
-							)}
-						</span>
-						<span>Downvotes</span>
-					</div>
-					<div>
-						<span className="flex items-center gap-1">
-							<FaRegComment /> {comments}
-						</span>
-						<span>Comments</span>
-					</div>
-					<div>
-						<span className="flex items-center gap-1">
-							<BiShareAlt /> {shares}
-						</span>
-						<span>Shares</span>
-					</div>
-				</div>
+				<Actions
+					upvotes={upvotes}
+					downvotes={downvotes}
+					comments={comments}
+					shares={shares}/>
 			</div>
 		</div>
 	);
