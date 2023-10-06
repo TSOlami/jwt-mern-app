@@ -1,8 +1,6 @@
-import AnnouncementContainer from "../components/AnnouncementContainer";
-import Sidebar from "../components/Sidebar";
 import ProfileImg from "../assets/profileImg.png";
 import { FaCircleCheck } from "react-icons/fa6";
-import Post from "../components/Post";
+import { Post, Sidebar, AnnouncementContainer } from "../components";
 import Wrapper from "../assets/wrapper.png";
 import { mockTexts } from "../data";
 

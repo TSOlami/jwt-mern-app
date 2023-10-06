@@ -16,7 +16,7 @@ export const mockAnnouncements = [
 		user: "Ifedimeji Omonyi",
 		isAdmin: true,
 		content:
-			"There would be a departmental meeting to discuss the increased cost of things required to maintain the departmen",
+			"There would be a departmental meeting to discuss the increased cost of things required to maintain the department",
 	},
 	{
 		user: "Slimanny",

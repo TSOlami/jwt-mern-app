@@ -1,10 +1,8 @@
 import { FaMagnifyingGlass } from "react-icons/fa6";
-import Post from "../components/Post";
-import Sidebar from "../components/Sidebar";
 import { mockTexts, mockTexts2 } from "../data";
-import AnnouncementContainer from "../components/AnnouncementContainer";
-import Wrapper from '../assets/Wrapper.png'
-import Avatar from '../assets/avatar2.png'
+
+import { Sidebar, Post, AnnouncementContainer } from "../components";
+import { Wrapper, Avatar } from '../assets';
 
 const Home = () => {
 	return (

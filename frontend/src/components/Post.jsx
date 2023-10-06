@@ -7,7 +7,7 @@ import {
 	BiUpvote,
 } from "react-icons/bi";
 
-const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, username, avatar }) => {
+const Post = ({ isAdmin, upvotes, downvotes, shares, comments, text, name, username, avatar }) => {
 	const date = new Date();
 	const day = date.getDay();
 	const month = date.toLocaleString("default", { month: "long" });
@@ -15,7 +15,7 @@ const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, userna
 	return (
 		<div className="border-b-2 border-gray-300 p-4 flex flex-row gap-2 h-fit min-w-[400px] md:min-w-[450px] lg:min-w-[500px] xl:w-[700px]">
 			<div>
-				<img src={avatar} alt="" />
+				<img src={avatar} alt="avatar" />
 			</div>
 
 			<div className="flex flex-col gap-2 w-full">

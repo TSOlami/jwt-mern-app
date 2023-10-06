@@ -1,4 +1,4 @@
-import Searchicon from "../assets/Searchicon.png";
+import searchIcon from "../assets/searchIcon.png";
 import "../index.css"
 const style = {
     width: '100',
@@ -18,7 +18,7 @@ const PageBox = (props) => {
                 <span> {props.name} </span>
                 <div className="search" >
                     <img
-                        src= {Searchicon}
+                        src= {searchIcon}
                         style={{display: "inline", width: "20px", height: "20px", marginLeft: "10px", marginRight: "15px"}}
                     />
                     <span> Search </span>

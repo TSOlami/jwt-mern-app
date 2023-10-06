@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import Signin from "../assets/Signin.png";
+import { SignInImage } from "../assets";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import FormErrors from "../components/FormErrors";
@@ -128,7 +128,7 @@ const SignIn = () => {
 					className="bg-gradient-to-r from-cyan-500 to-blue-500 h-screen w-full flex items-center justify-center
 "
 				>
-					<img src={Signin} alt="" />
+					<img src={SignInImage} alt="" />
 				</div>
 			</div>
 		</div>
