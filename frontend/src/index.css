@@ -113,3 +113,59 @@
     @apply rounded-3xl border border-black items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson;
   }
 }
+
+.search {
+  display: flex;
+  align-items: center;
+  color: #B3B3B3;
+  width: 250px;
+  height: 30px;
+  border: 1px solid #B3B3B3;
+  border-radius: 20px;
+}
+
+.search:hover {
+  border: 2px solid #17A1FA66;
+}
+
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    padding: 10px;
+    color: white;
+    position: fixed;
+    right: 1rem;
+    top: 5vh;
+    z-index: 10;
+    background: white;
+    border-radius: 5px;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    background-color: #17A1FA;
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+}
