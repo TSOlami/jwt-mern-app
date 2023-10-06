@@ -1,30 +1,24 @@
-import { FaMagnifyingGlass } from "react-icons/fa6";
 import { mockTexts, mockTexts2 } from "../data";
 
 import { Sidebar, Post, AnnouncementContainer } from "../components";
 import { Wrapper, Avatar } from '../assets';
+import HeaderComponent from "../components/HeaderComponent";
+import { BottomNav } from "../components";
 
 const Home = () => {
 	return (
 		<div className="flex ">
 			<Sidebar/>
 			<div className="flex flex-col">
-				<div className="flex flex-row justify-between items-center p-5 py-2 border-b-2 border-gray-300">
-					<h1 className="text-3xl">Home</h1>
-					<form action="" className="relative flex ">
-						<input
-							type="text"
-							placeholder="Search"
-							className="rounded-2xl border-gray-300 border-2 p-1 w-72 md:w-96 pl-10"
-						/>
-						<FaMagnifyingGlass className="absolute left-2 flex self-center justify-center" />
-					</form>
-				</div>
+				<HeaderComponent title="Home"/>
 				<Post upvotes="3224" downvotes="30" shares="5" comments="10" isAdmin={true} text={mockTexts} name="Ifedimeji Omoniyi" username= "@design_hashira" avatar={Wrapper}/>
 
 				<Post upvotes="20" downvotes="300" shares="200" comments="150" isAdmin={false} text={mockTexts2} name="Bola Ahmed Tinubu" username= "@bobo chicago" avatar={Avatar}/>
+				<Post upvotes="20" downvotes="300" shares="200" comments="150" isAdmin={false} text={mockTexts2} name="Bola Ahmed Tinubu" username= "@bobo chicago" avatar={Avatar}/>
+				<Post upvotes="20" downvotes="300" shares="200" comments="150" isAdmin={false} text={mockTexts2} name="Bola Ahmed Tinubu" username= "@bobo chicago" avatar={Avatar}/>
 			</div>
 			<AnnouncementContainer/>
+			<BottomNav/>
 		</div>
 	);
 };

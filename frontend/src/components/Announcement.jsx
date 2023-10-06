@@ -2,7 +2,7 @@ import { FaCircleCheck } from "react-icons/fa6"
 
 const Announcement = ({title, content}) => {
   return (
-    <div className="bg-greyish rounded-[2rem] p-4">
+    <div className="bg-greyish rounded-[2rem] p-4 my-4">
       <h1 className="text-xl font-bold py-3">{title}</h1>
       <div>
         {content?.map((text, index) => {
