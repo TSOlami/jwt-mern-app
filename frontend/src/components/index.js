@@ -11,4 +11,4 @@ import AnnouncementContainer from './AnnouncementContainer';
 import Post from './Post';
 import PageBox from './PageBox';
 
-export {FeatureCard, ImageCard, NavBar, Footer, SignInForm, SignUpForm, Payment, Button, Sidebar, AnnouncementContainer, Post, PageBox};
+export {FeatureCard, ImageCard, NavBar, Footer, SignInForm, SignUpForm, Payment, Button, Sidebar, Post, PageBox, AnnouncementContainer};
