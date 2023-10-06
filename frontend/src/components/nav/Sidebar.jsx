@@ -8,7 +8,7 @@ import {
 	FaArrowRightFromBracket,
 	FaCircleCheck,
 } from "react-icons/fa6";
-import Avatar from "../assets";
+import { Avatar } from "../../assets";
 import { useEffect, useState } from "react";
 
 const Sidebar = () => {
