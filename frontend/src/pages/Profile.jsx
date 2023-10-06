@@ -1,7 +1,7 @@
 import ProfileImg from "../assets/profileImg.png";
 import { FaCircleCheck } from "react-icons/fa6";
 import { Post, Sidebar, AnnouncementContainer } from "../components";
-import Wrapper from "../assets";
+import Wrapper from "../assets/images/wrapper.png";
 import { mockTexts } from "../data";
 
 const Profile = () => {

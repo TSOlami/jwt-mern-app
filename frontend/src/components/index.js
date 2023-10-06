@@ -8,5 +8,7 @@ import Button from './Button';
 import Payment from './Payment';
 import Sidebar from './nav/Sidebar';
 import AnnouncementContainer from './AnnouncementContainer';
+import Post from './Post';
+import PageBox from './PageBox';
 
-export {FeatureCard, ImageCard, NavBar, Footer, SignInForm, SignUpForm, Payment, Button, Sidebar, AnnouncementContainer};
+export {FeatureCard, ImageCard, NavBar, Footer, SignInForm, SignUpForm, Payment, Button, Sidebar, Post, PageBox, AnnouncementContainer};

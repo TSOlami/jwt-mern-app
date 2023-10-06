@@ -9,7 +9,7 @@ import {
 	FaCircleCheck,
 } from "react-icons/fa6";
 import { useEffect, useState } from "react";
-import Avatar from "../../assets/index";
+import Avatar from "../../assets/avatar2.png";
 
 const Sidebar = () => {
 	const isAdmin = true;
