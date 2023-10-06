@@ -1,5 +1,6 @@
 import { Hamburger, NamssnLogo } from "../../assets"
 import { navLinks } from "../../constants"
+import { Link } from "react-router-dom"
 
 const NavBar = () => {
   return (
@@ -14,12 +15,12 @@ const NavBar = () => {
       <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
         {navLinks.map((item) => (
           <li key={item.label}>
-            <a
-            href={item.href}
+            <Link
+            to={item.href}
             className="nav-text"
             >
             {item.label}
-            </a>
+            </Link>
           </li>
         ))}
       </ul>
