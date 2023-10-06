@@ -17,7 +17,7 @@ const Hero = () => {
     <div className="body-text">
     Mathematics Department is hard like mad and i dont see wy a person would want a website designed for it. But i  would try to make it beautiful sha. Using Illustratons and images 
     </div>
-    <div className="flex flex-row justify-around w-full py-5 gap-4">
+    <div className="flex flex-row justify-around w-full py-5 gap-4 md:justify-normal">
     <button className="button-1">Sign Up</button>
     <button className="button-2">Log In</button>
     </div>
