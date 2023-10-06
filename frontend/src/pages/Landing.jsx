@@ -12,10 +12,10 @@ const Landing = () => {
         <AboutUs />
       </section>
       <section className="padding">
-        <Features />
+        <FAQs />
       </section>
       <section className="padding">
-        <FAQs />
+        <Features />
       </section>
       <section className="padding">
         <ContactUs />

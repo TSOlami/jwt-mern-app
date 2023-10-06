@@ -9,7 +9,7 @@ export const mockTexts2 = [
   "Schools will now pay 2million naira for tax to the federal government",
   "A townhall different from Balabluee",
   "We will make Nigeria better by crook"
-]
+];
 
 export const mockAnnouncements = [
 	{
