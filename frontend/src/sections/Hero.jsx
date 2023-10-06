@@ -7,7 +7,7 @@ const Hero = () => {
   className="w-full flex lg:flex-row flex-col justify-center min-h-screen gap-2 max-container"
   >
     <div className="relative lg:w-3/5 flex flex-col justify-center items-start w-full padding-x pt-28">
-    <div className="text-container">
+    <div className="text-container border-black">
     Unlock the World of Mathematics <span><img src={polygon} alt="polygon" /></span>
     </div>
     <div className="header-text">

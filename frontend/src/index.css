@@ -99,7 +99,7 @@
   }
 
   .body-text {
-    @apply font-crimson text-base leading-normal;
+    @apply font-crimson text-xl leading-normal;
   }
 
   .nav-text {
@@ -110,7 +110,7 @@
     @apply font-merriweather font-bold text-4xl leading-normal;
   }
   .text-container {
-    @apply rounded-3xl border border-black items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson;
+    @apply rounded-3xl border items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson;
   }
 }
 
