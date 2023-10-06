@@ -6,5 +6,6 @@ import PaymentPage from './PaymentPage';
 import Resources from './Resources';
 import Profile from './Profile';
 import AnnouncementMobile from './AnnouncementMobile';
+import NotificationPage from './NotificationPage';
 
-export { Landing, SignUp, SignIn, PaymentPage, Home, Resources, Profile, AnnouncementMobile };
+export { Landing, SignUp, SignIn, PaymentPage, Home, Resources, Profile, AnnouncementMobile, NotificationPage };
