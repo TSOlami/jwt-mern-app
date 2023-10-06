@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Landing, SignIn, SignUp, Home, Resources, PaymentPage, Profile, AnnouncementMobile } from './pages';
+import { Landing, SignIn, SignUp, Home, Resources, PaymentPage, Profile, AnnouncementMobile, NotificationPage } from './pages';
 
 export default function App() {
   return (
@@ -13,6 +13,7 @@ export default function App() {
       <Route path='/resources' element={<Resources/>} />
       <Route path='/profile' element={<Profile/>}/>
       <Route path='/announcements' element={<AnnouncementMobile/>} />
+      <Route path='/notifications' element={<NotificationPage/>}/>
     </Routes>
     </BrowserRouter>    
   )
