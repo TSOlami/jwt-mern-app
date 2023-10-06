@@ -6,9 +6,8 @@ import {
 	BiSolidUpvote,
 	BiUpvote,
 } from "react-icons/bi";
-import { Wrapper } from "../assets";
 
-const Post = ({ isAdmin, upvotes, downvotes, shares, comments,text, name, username, avatar }) => {
+const Post = ({ isAdmin, upvotes, downvotes, shares, comments, text, name, username, avatar }) => {
 	const date = new Date();
 	const day = date.getDay();
 	const month = date.toLocaleString("default", { month: "long" });
