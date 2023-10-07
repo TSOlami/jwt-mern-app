@@ -35,8 +35,8 @@ const FAQs = () => {
       <h1 className="header-text text-center max-w-xl mx-auto">
         Frequently Asked Questions
       </h1>
-      <div className="flex md:flex-row-reverse flex-col gap-10 pt-10 pr-8 mx-auto">
-        <div className="flex flex-col">
+      <div className="flex md:flex-row-reverse flex-col gap-10 pt-10 px-8 mx-auto">
+        <div className="lg:w-3/5 flex flex-col pt-8">
         <FAQItem
       questionNumber={1}
   question="What does NAMSSN stand for?"
@@ -67,7 +67,7 @@ const FAQs = () => {
   answer="Yes, we welcome contributions from our members. If you have articles, blogs, or other content related to mathematics that you'd like to share, please contact our admin team for more information on how to contribute."
 />
         </div>
-        <div className="mx-auto">
+        <div className="max-w-10 mx-auto">
           <img src={FAQ} alt="FAQ" className="w-full pt-8" />
         </div>
       </div>

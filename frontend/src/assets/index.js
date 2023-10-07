@@ -10,6 +10,6 @@ import Avatar from './avatar2.png';
 import aboutIcon from './icons/about.svg';
 import arrow from './icons/arrow.svg';
 import FAQ from './images/FAQ.svg';
-import arrowDown from './icons/arrowDown.svg';
+import contactUs from './images/contactUs.svg';
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FAQ, arrowDown };
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FAQ, contactUs };
