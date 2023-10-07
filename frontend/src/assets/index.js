@@ -11,5 +11,8 @@ import aboutIcon from './icons/about.svg';
 import arrow from './icons/arrow.svg';
 import FeesSVG from './images/FeesSVG.svg'
 import Bro from './images/bro.svg';
+import FAQ from './images/FAQ.svg';
+import contactUs from './images/contactUs.svg';
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro };
+
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro, FAQ, contactUs };

@@ -12,7 +12,7 @@ const NavBar = () => {
         </a>
         <span className="logo-text py-[2px]">NAMSSN</span>
       </div>
-      <ul className="flex-1 flex justify-center items-center gap-16 max-lg:hidden">
+      <ul className="flex-1 flex justify-center items-center ml-8 gap-10 max-lg:hidden">
         {navLinks.map((item) => (
           <li key={item.label}>
             <Link
@@ -31,6 +31,10 @@ const NavBar = () => {
           width={25}
           height={25}
         />
+      </div>
+      <div className=" flex gap-4">
+        <button className="button-1">Sign Up</button>
+        <button className="button-2">Log In</button>
       </div>
     </nav>
   </header>
