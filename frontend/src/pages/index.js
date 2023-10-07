@@ -8,5 +8,6 @@ import Profile from './Profile';
 import AnnouncementMobile from './AnnouncementMobile';
 import NotificationPage from './NotificationPage';
 import ErrorPage from './ErrorPage';
+import DepartmentalFees from './DepartmentalFees';
 
-export { Landing, SignUp, SignIn, PaymentPage, Home, Resources, Profile, AnnouncementMobile, NotificationPage, ErrorPage };
+export { Landing, SignUp, SignIn, PaymentPage, Home, Resources, Profile, AnnouncementMobile, NotificationPage, ErrorPage, DepartmentalFees };
