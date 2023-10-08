@@ -35,7 +35,7 @@ const DepartmentalFees = () => {
 						<img src={aboutIcon} alt="" />
 					</div>
 					<div>
-						<h1 className="font-semibold text-3xl">Make Payment</h1>
+						<h1 className="font-semibold text-[35px]">Make Payment</h1>
 						<div>
 							Let&apos;s help NAMSSN by paying our departmental
 							dues on time.
