@@ -111,7 +111,7 @@
   }
   
   .header-text {
-    @apply font-merriweather font-bold md:text-4xl leading-normal py-6 text-2xl;
+    @apply font-merriweather font-bold md:text-3xl leading-normal py-6 text-2xl;
   }
   .text-container {
     @apply rounded-3xl border items-center flex gap-2 justify-center py-[5px] px-[20px] text-xl font-crimson;
