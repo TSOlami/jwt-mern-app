@@ -1,5 +1,5 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Landing, SignIn, SignUp, Home, Resources, PaymentPage, Profile, AnnouncementMobile, NotificationPage, ErrorPage, DepartmentalFees, EventsPage } from './pages';
+import { Landing, SignIn, SignUp, Home, Resources, PaymentPage, Profile, AnnouncementMobile, NotificationPage, ErrorPage, DepartmentalFees, EventsPage, AboutUsPage } from './pages';
 
 export default function App() {
   return (
@@ -17,6 +17,7 @@ export default function App() {
       <Route path='/departmental-fees' element={<DepartmentalFees/>}/>
       <Route path='/events' element={<EventsPage/>}/>
       <Route path='*' element={<ErrorPage/>} />
+      <Route path='/about-us' element={<AboutUsPage/>} />
     </Routes>
     </BrowserRouter>    
   )
