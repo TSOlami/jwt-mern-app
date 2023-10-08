@@ -4,8 +4,8 @@ import { Link } from "react-router-dom"
 
 const Footer = () => {
   return (
-	<footer>
-    <div className="container p-16">
+	<footer className="bg-black padding-x padding-t">
+    <div className="container">
       <div className="flex flex-col md:flex-row gap-20 pb-10 mx-auto border-b-4 border-gray-400 ">
         <div>
           <h1 className="flex header-text text-white">National Association of Mathematical Science Students of Nigeria</h1>
@@ -74,7 +74,7 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="p-4 bottom-2">
+      <div className="p-4 mb-8">
       <p className="flex flex-row justify-center body-text text-white">
         <span className="">Copyright </span>
         <span><img src={Copyright} alt="" className="w-full h-full" /></span>

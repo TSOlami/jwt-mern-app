@@ -20,7 +20,7 @@ const Landing = () => {
       <section className="padding">
         <ContactUs />
       </section>
-      <section className="padding bg-black padding-x padding-t pb-8">
+      <section>
         <Footer />
       </section>
     </main>

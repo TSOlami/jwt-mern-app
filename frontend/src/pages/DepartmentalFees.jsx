@@ -1,10 +1,10 @@
 import { Link } from "react-router-dom";
-import { NavBar } from "../components";
+import { NavBar, Footer } from "../components";
 import { Bro, FeesSVG, aboutIcon } from "../assets";
 
 const DepartmentalFees = () => {
 	return (
-		<div>
+		<main>
 			<NavBar />
 
 			{/* Hero section */}
@@ -18,8 +18,8 @@ const DepartmentalFees = () => {
 						Pay your departmental dues from the comfort of your
 						room.
 					</div>
-					<Link className="bg-black p-2 rounded-md text-white">
-						Pay with Remita
+					<Link className="button-2">
+						Pay with Paystack
 					</Link>
 				</div>
 				<div className="flex-1 p-2 pt-4 basis-6/12 self-center xl:pl-20">
@@ -30,7 +30,7 @@ const DepartmentalFees = () => {
 			{/* Features section */}
 
 			<section className="flex flex-row flex-wrap w-full gap-10 justify-evenly my-10 p-5">
-				<div className="flex flex-row">
+				<div className="flex flex-row gap-8">
 					<div>
 						<img src={aboutIcon} alt="" />
 					</div>
@@ -68,8 +68,8 @@ const DepartmentalFees = () => {
 						</div>
 					</div>
 					<div className="p-5 flex flex-row items-center justify-center">
-						<Link to='/signin' className=" bg-white p-2 rounded-md text-black">
-							Pay with Remita
+						<Link to='/signin' className=" button-1">
+							Pay with Paystack
 						</Link>
 					</div>
 				</div>
@@ -85,10 +85,10 @@ const DepartmentalFees = () => {
 						ensure we allocate the right payment information to you
 					</div>
 					<div>
-						<Link to='/signup' className="bg-white border-2 p-2 rounded-md text-black m-2">
+						<Link to='/signup' className="button-1 border-none mx-2">
 							Sign up
 						</Link>
-						<Link to='/signin' className="bg-black p-2 rounded-md text-white">
+						<Link to='/signin' className="button-2">
 							Log in
 						</Link>
 					</div>
@@ -101,8 +101,8 @@ const DepartmentalFees = () => {
 
 
       {/* Footer component here*/}
-      
-		</div>
+          <Footer />
+		</main>
 	);
 };
 
