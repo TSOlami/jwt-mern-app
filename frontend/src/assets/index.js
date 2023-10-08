@@ -13,5 +13,10 @@ import FAQ from './images/FAQ.svg';
 import contactUs from './images/contactUs.svg';
 import Ellipse1 from './images/Ellipse1.svg';
 import Ellipse2 from './images/Ellipse2.svg';
+import Copyright from './icons/copyright.svg';
+import FacebookIcon from './icons/facebook.svg';
+import InstagramIcon from './icons/instagram.svg';
+import TwitterIcon from './icons/twitter.svg';
+import LinkedinIcon from './icons/linkedin.svg';
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FAQ, contactUs, Ellipse1, Ellipse2 };
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FAQ, contactUs, Ellipse1, Ellipse2, Copyright, FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon };
