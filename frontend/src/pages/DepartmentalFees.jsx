@@ -47,7 +47,7 @@ const DepartmentalFees = () => {
 					</div>
 				</div>
 
-				<div className="bg-black rounded-3xl w-[300px] border-gray-400 border-2">
+				<div className="bg-black rounded-3xl w-[300px] border-gray-400 border-2 shadow-md">
 					<div className=" bg-white p-5 rounded-b-3xl border-t-0 rounded-3xl">
 						<h3 className="text-2xl font-semibold text-center">
 							Departmental dues
@@ -101,7 +101,9 @@ const DepartmentalFees = () => {
 
 
       {/* Footer component here*/}
-          <Footer />
+        <div className="pt-16">
+		<Footer />
+		</div>
 		</main>
 	);
 };
