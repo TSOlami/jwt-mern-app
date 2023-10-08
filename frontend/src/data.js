@@ -23,9 +23,41 @@ export const mockAnnouncements = [
 		isAdmin: false,
 		content: "lorem ipsum dolor and testing whatever this is",
 	},
-  {
-    user: "Elon musk",
-    isAdmin: true,
-    content: "I will be buying half of all Nigeria soon to help alleviate poverty. I will also employ 2000 techies into my space X company because I believe Nigeria is the future"
-  }
+	{
+		user: "Elon musk",
+		isAdmin: true,
+		content:
+			"I will be buying half of all Nigeria soon to help alleviate poverty. I will also employ 2000 techies into my space X company because I believe Nigeria is the future",
+	},
+];
+
+export const mockReplies = [
+	{
+		name: "Ifedimeji Omoniyi",
+		username: "design_hashira",
+		isAdmin: true,
+		downvote: true,
+		avatar: "wrapper",
+		content:
+			"There would be a departmental meeting to discuss the increased cost of things required to maintain the department",
+	},
+	{
+		name: "Aliko Dangote",
+		username: "Cement lord",
+		isAdmin: false,
+		upvote: true,
+		avatar: "wrapper",
+		content:
+			"When you're rich like me, all these school fees increment would'nt really matter to you. You would barely be moved",
+	},
+	{
+		name: "Slimany's babe",
+		username: "Hotgirl123",
+		isAdmin: false,
+		comment: true,
+		avatar: "avatar2",
+		content: "My man is a tech bro, he works so hard to make things work for us both, I can't wait to move to canada when he finally gets that big time Faang job",
+
+
+	},
 ];
