@@ -15,6 +15,8 @@ import FAQ from './images/FAQ.svg';
 import contactUs from './images/contactUs.svg';
 import Ellipse1 from './images/Ellipse1.svg';
 import Ellipse2 from './images/Ellipse2.svg';
+import MainEvent from './images/MainEvent.png';
+import EventImg from './images/EventImg.png';
 
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro, FAQ, contactUs, Ellipse1, Ellipse2 };
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro, FAQ, contactUs, Ellipse1, Ellipse2, MainEvent, EventImg };
