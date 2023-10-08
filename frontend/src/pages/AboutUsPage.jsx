@@ -4,6 +4,7 @@ import { Group1, Rectangle15 } from "../assets"
 const AboutUsPage = () => {
   return (
 	<main className="relative">
+    {/* NavBar */}
 		<NavBar/>
 
 		{/* Hero section */}
@@ -23,19 +24,21 @@ const AboutUsPage = () => {
 
 		{/* Principal Offices of the Department */}
     <section className="padding">
-    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-28 max-md:mt-50">Principal Offices of the Department</h1>
+    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">Principal Offices of the Department</h1>
+
     </section>
 
     {/* Departmental Executives */}
     <section className="padding">
-    Departmental Executives
+    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">Departmental Executives</h1>
     </section>
 
     {/* NAMSSN Tech Team */}
     <section className="padding">
-    NAMSSN Tech Team 
+    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">NAMSSN Tech Team</h1>
     </section>
 
+    {/* Footer */}
 		<Footer/>
 	</main>
   )
