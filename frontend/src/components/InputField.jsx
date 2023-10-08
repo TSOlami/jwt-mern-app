@@ -1,4 +1,3 @@
-
 const InputField = ({ type, name, id, placeholder, value, onChange, icon, pad }) => {
   return (
     <div className="flex flex-row relative w-full">

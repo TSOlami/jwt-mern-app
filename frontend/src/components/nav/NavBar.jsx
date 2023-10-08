@@ -23,6 +23,10 @@ const NavBar = () => {
             </Link>
           </li>
         ))}
+        <div className=" flex gap-4">
+        <button className="button-1">Sign Up</button>
+        <button className="button-2">Log In</button>
+        </div>
       </ul>
       <div className="hidden max-lg:block">
         <img
@@ -31,10 +35,6 @@ const NavBar = () => {
           width={25}
           height={25}
         />
-      </div>
-      <div className=" flex gap-4">
-        <button className="button-1">Sign Up</button>
-        <button className="button-2">Log In</button>
       </div>
     </nav>
   </header>
