@@ -11,7 +11,7 @@ const AboutUsPage = () => {
       <div className="pt-28 max-md:pt-16">
       <h2 className="text-2xl font-bold font-merriweather">About Us</h2>
         <div className="flex gap-6 mr-10">
-        <h1 className="header-text">Know more about NAMSSN FUTMINNA, your HOD, your Excos, and the 2+2 of the department.</h1>
+        <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl">Know more about NAMSSN FUTMINNA, your HOD, your Excos, and the 2+2 of the department.</h1>
         <img src={Group1} alt="" />
         </div>
         <img src={Rectangle15} alt="" className="md:py-8 py-4"/>
@@ -23,7 +23,7 @@ const AboutUsPage = () => {
 
 		{/* Principal Offices of the Department */}
     <section className="padding">
-    <h1 className="header-text text-center mt-28 max-md:mt-50">Principal Offices of the Department</h1>
+    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-28 max-md:mt-50">Principal Offices of the Department</h1>
     </section>
 
     {/* Departmental Executives */}

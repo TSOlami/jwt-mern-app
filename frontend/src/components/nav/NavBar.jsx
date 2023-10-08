@@ -21,12 +21,12 @@ const NavBar = () => {
 	}, [isNavOpen]);
 
 	return (
-		<header className="bg-white px-[10px] pb-[8px]  z-[10px] w-full sticky top-0">
+		<header className="px-[10px] z-[10px] w-full sticky top-0">
 
 
 			{/* Namssn logo */}
 			<div>
-				<div className="flex flex-row items-center absolute bg-white lg:hidden">
+				<div className="flex flex-row items-center absolute lg:hidden">
 					<Link to="/">
 						<img src={NamssnLogo} alt="Logo" className="logo" />
 					</Link>
