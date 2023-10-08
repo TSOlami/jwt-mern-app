@@ -22,6 +22,8 @@ import FacebookIcon from './icons/facebook.svg';
 import InstagramIcon from './icons/instagram.svg';
 import TwitterIcon from './icons/twitter.svg';
 import LinkedinIcon from './icons/linkedin.svg';
+import Group1 from './images/Group1.svg';
+import Rectangle15 from './images/Rectangle15.svg';
 
-export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro, FAQ, contactUs, Ellipse1, Ellipse2, Copyright, FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon, MainEvent, EventImg };
+export { NamssnLogo, SignInImage, SignUpImage, Wrapper, Hamburger, polygon, heroImage, searchIcon, Avatar, aboutIcon, arrow, FeesSVG, Bro, FAQ, contactUs, Ellipse1, Ellipse2, Copyright, FacebookIcon, InstagramIcon, TwitterIcon, LinkedinIcon, MainEvent, EventImg, Group1, Rectangle15 };
 
