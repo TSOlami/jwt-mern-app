@@ -68,6 +68,7 @@ export const mockTeam = [
 		image: "TeamImg.jpg",
 		position: "Backend Developer",
 		facebook: "",
+		linkedin: "",
 	},
 	{
 		name: "Mr Ifedimeji Omoniyi",
@@ -75,6 +76,7 @@ export const mockTeam = [
 		image: "TeamImg.jpg",
 		position: "NAMSSN president",
 		facebook: "",
+		linkedin: "",
 	},
 	{
 		name: "Dr. A. A. Adeniran",
@@ -82,6 +84,7 @@ export const mockTeam = [
 		image: "TeamImg.jpg",
 		position: "HOD",
 		facebook: "",
+		linkedin: "",
 	},
 	{
 		name: "Mr. CeeCee Khaleesi",
