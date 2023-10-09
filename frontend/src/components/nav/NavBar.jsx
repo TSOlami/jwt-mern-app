@@ -21,7 +21,7 @@ const NavBar = () => {
 	}, [isNavOpen]);
 
 	return (
-		<header className="px-[10px] py-[8px] absolute z-[10px] w-full">
+		<header className="px-[10px] my-4 mx-2 z-[10px] w-full sticky top-0">
 
 
 			{/* Namssn logo */}

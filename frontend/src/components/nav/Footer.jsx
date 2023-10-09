@@ -5,8 +5,7 @@ import { Link } from "react-router-dom"
 const Footer = () => {
   return (
 	<footer className="bg-black padding-x padding-t">
-    <div className="container">
-      <div className="flex flex-col md:flex-row gap-20 pb-10 mx-auto border-b-4 border-gray-400 ">
+    <div className="flex flex-col md:flex-row gap-20 pb-10 mx-auto border-b-4 border-gray-400 ">
         <div>
           <h1 className="flex header-text text-white">National Association of Mathematical Science Students of Nigeria</h1>
         </div>
@@ -26,7 +25,7 @@ const Footer = () => {
         </div> 
         <div className="">
         <ul className="flex flex-col justify-center items-start ml-8 gap-6">
-            <h4 className="text-white">Social links</h4>
+            <h4 className="text-lg text-white">Social links</h4>
             <li>
               <a
                 href="https://www.facebook.com/"
@@ -74,14 +73,13 @@ const Footer = () => {
           </ul>
         </div>
       </div>
-      <div className="p-4 mb-8">
+      <div className="p-4">
       <p className="flex flex-row justify-center body-text text-white">
         <span className="">Copyright </span>
         <span><img src={Copyright} alt="" className="w-full h-full" /></span>
         <span>2023 NAMSSN FUTMINNA Chapter. All Rights Reserved.</span>
       </p>
       </div>
-    </div>
   </footer>
   )
 }
