@@ -9,7 +9,7 @@ const AboutUsPage = () => {
 			<NavBar />
 			<div className="pt-24 p-10">
 				<div className="font-bold text-3xl px-8">About Us</div>
-				<h1 className="text-center font-bold text-3xl md:text-4xl p-8">
+				<h1 className=" md:text-center font-bold text-3xl md:text-4xl p-4 md:p-8">
 					Know more about NAMSSN FUTMINNA, your HOD, your Excos, and
 					the 2+2 of the department.
 				</h1>
@@ -35,7 +35,7 @@ const AboutUsPage = () => {
 				{/* Principal offices */}
 
 				<h1 className="text-2xl font-bold text-center p-5">
-					Principal Offices of the Department
+					Principal Offices of the <span className="underline underline-blue underline-offset-2">Department</span>
 				</h1>
 				<div className="flex flex-row flex-wrap gap-5 items-center justify-center p-5 mb-10">
 					{mockTeam
