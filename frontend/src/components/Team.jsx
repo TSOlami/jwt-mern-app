@@ -1,5 +1,4 @@
-import { FaFacebook, FaLinkedin } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { FacebookIcon, LinkedinIcon } from "../assets";
 
 const Team = ({ image, facebook, linkedin, name, position }) => {
 	return (
@@ -19,16 +18,16 @@ const Team = ({ image, facebook, linkedin, name, position }) => {
       </div>
 
 			<div className="bg-black flex flex-row items-center justify-center text-xl gap-4 text-blue-400 absolute w-28 bottom-[73px] h-14 mt-5 rounded-tl-2xl pr-4">
-				<Link to={facebook} >
-					<FaFacebook color="#1877F2"/>
-				</Link>
-				<Link to={linkedin}>
-					<FaLinkedin color="#1877F2"/>
-				</Link>
+				<a href={facebook} className="hover:scale-125">
+					<img src={FacebookIcon} alt="" />
+				</a>
+				<a href={linkedin} className="hover:scale-125">
+					<img src={LinkedinIcon} alt="" />
+				</a>
 			</div>
 
       <div className="p-4 bg-black text-white rounded-b-2xl">
-        <div>{name}</div>
+        <div className="font-semibold">{name}</div>
         <div>{position}</div>
       </div>
 		</div>
