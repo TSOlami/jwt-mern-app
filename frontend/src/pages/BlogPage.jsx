@@ -29,13 +29,17 @@ const BlogPage = () => {
               <p className="text-xl text-black font-normal font-crimson my-4">{post.date}</p>
               </div>
             </div>
-            <p className="body-text my-4">{post.body}</p>
-            <Actions 
-            upvotes={post.upvotes}
-            downvotes={post.downvotes}
-            shares="5"
-            comments="10"/> 
-            
+            <div className="flex flex-col md:flex-row rounded-lg mt-5 bg-tertiary opacity-[50px]">
+              <img src={post.image} alt="Blog Image" className="rounded-lg" />
+              <div className="p-6">
+                <Actions 
+                  upvotes={post.upvotes}
+                  downvotes={post.downvotes}
+                  shares="5"
+                  comments="10"/> 
+                <p className="body-text my-4">{post.body}</p>
+              </div>
+            </div>
           </div>
         ))}
       </div>
