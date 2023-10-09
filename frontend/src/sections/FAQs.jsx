@@ -10,7 +10,7 @@ const FAQItem = ({ questionNumber, question, answer }) => {
   };
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col cursor-pointer" onClick={toggleExpanded}>
       <div className="flex flex-row justify-between items-center border-b-2">
         <h2 className="text-lg font-normal font-merriweather">
           <span className="text-3xl font-bold font-merriweather">{questionNumber}. </span>

@@ -1,47 +1,108 @@
-import { NavBar, Footer } from "../components"
-import { Group1, Rectangle15 } from "../assets"
+import { AboutImg } from "../assets";
+import { Footer, NavBar } from "../components";
+import Team from "../components/Team";
+import { mockTeam } from "../data";
 
 const AboutUsPage = () => {
-  return (
-	<main className="relative">
-    {/* NavBar */}
-		<NavBar/>
+	return (
+		<main>
+			<NavBar />
+			<div className="pt-24 p-10">
+				<div className="font-bold text-3xl px-8">About Us</div>
+				<h1 className=" md:text-center font-bold text-3xl md:text-4xl p-4 md:p-8">
+					Know more about NAMSSN FUTMINNA, your HOD, your Excos, and
+					the 2+2 of the department.
+				</h1>
+				<div className="flex items-center justify-center">
+					<img src={AboutImg} alt="" />
+				</div>
 
-		{/* Hero section */}
-		<section className="p-16 pt-28 md:pt-10 w-full sm:h-screen">
-      <div className="pt-28 max-md:pt-16">
-      <h2 className="text-2xl font-bold font-merriweather">About Us</h2>
-        <div className="flex gap-6 mr-10">
-        <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl">Know more about NAMSSN FUTMINNA, your HOD, your Excos, and the 2+2 of the department.</h1>
-        <img src={Group1} alt="" />
-        </div>
-        <img src={Rectangle15} alt="" className="md:py-8 py-4"/>
-        <p className="body-text pt-4">
-        At NAMSSN, we foster a community of passionate individuals who share a common love for mathematics and its applications. Our association brings together students, faculty, and enthusiasts to explore, learn, and grow together.
-        At NAMSSN, we foster a community of passionate individuals who share a common love for mathematics and its applications. Our association brings together students, faculty, and enthusiasts to explore, learn, and grow together. Mathematics Department is hard like mad and i dont see wy a person would want a website designed for it. But i  would try to make it beautiful sha. Using Illustratons and images </p>
-      </div>
-		</section>
+				<p className="md:p-10 p-5 md:w-[80%] m-auto my-5">
+					At NAMSSN, we foster a community of passionate individuals
+					who share a common love for mathematics and its
+					applications. Our association brings together students,
+					faculty, and enthusiasts to explore, learn, and grow
+					together. At NAMSSN, we foster a community of passionate
+					individuals who share a common love for mathematics and its
+					applications. Our association brings together students,
+					faculty, and enthusiasts to explore, learn, and grow
+					together. Mathematics Department is hard like mad and i dont
+					see wy a person would want a website designed for it. But i
+					would try to make it beautiful sha. Using Illustratons and
+					images{" "}
+				</p>
 
-		{/* Principal Offices of the Department */}
-    <section className="padding">
-    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">Principal Offices of the Department</h1>
+				{/* Principal offices */}
 
-    </section>
+				<h1 className="text-2xl font-bold text-center p-5">
+					Principal Offices of the <span className="underline underline-blue underline-offset-2">Department</span>
+				</h1>
+				<div className="flex flex-row flex-wrap gap-5 items-center justify-center p-5 mb-10">
+					{mockTeam
+						.filter((member) => member.role === "principal")
+						.map((member, index) => (
+							<div key={index}>
+								<Team
+									name={member.name}
+									position={member.position}
+									image={`src/assets/images/${member.image}`}
+									facebook={member.facebook}
+									linkedin={member.linkedin}
+								/>
+							</div>
+						))}
+				</div>
 
-    {/* Departmental Executives */}
-    <section className="padding">
-    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">Departmental Executives</h1>
-    </section>
+				{/* Excos */}
+				<h1 className="text-2xl font-bold text-center p-5 pb-2">
+					NAMSSN Executives{" "}
+				</h1>
+				<h1 className="text-primary text-2xl font-bold p-5 pt-0 text-right lg:flex lg:items-center lg:justify-center lg:relative lg:left-[50%] lg:w-fit">
+					2022/2023 Session
+				</h1>
 
-    {/* NAMSSN Tech Team */}
-    <section className="padding">
-    <h1 className="font-merriweather font-bold leading-normal py-6 text-3xl text-center mt-10 max-md:mt-15">NAMSSN Tech Team</h1>
-    </section>
+				<div className="flex flex-row flex-wrap gap-5 items-center justify-center p-5 mb-10">
+					{mockTeam
+						.filter((member) => member.role === "executive")
+						.map((member, index) => (
+							<div key={index}>
+								<Team
+									name={member.name}
+									position={member.position}
+									image={`src/assets/images/${member.image}`}
+									facebook={member.facebook}
+									linkedin={member.linkedin}
+								/>
+							</div>
+						))}
+				</div>
 
-    {/* Footer */}
-		<Footer/>
-	</main>
-  )
-}
+				{/* Tech team */}
+				<h1 className="text-2xl font-bold text-center p-5 pb-2">
+					&lt; NAMSSN Tech Team /&gt;
+				</h1>
 
-export default AboutUsPage
+				<div className="flex flex-row flex-wrap gap-5 items-center justify-center p-5 mb-10">
+					{mockTeam
+						.filter((member) => member.role === "developer")
+						.map((member, index) => (
+							<div key={index}>
+								<Team
+									name={member.name}
+									position={member.position}
+									image={`src/assets/images/${member.image}`}
+									facebook={member.facebook}
+									linkedin={member.linkedin}
+								/>
+							</div>
+						))}
+				</div>
+			</div>
+
+			{/* Footer */}
+			<Footer/>
+		</main>
+	);
+};
+
+export default AboutUsPage;
