@@ -6,6 +6,7 @@ import axios from 'axios';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
+
 const PaymentForm = () => {
   const [amount, setAmount] = useState(""); // State to store the payment amount
 
@@ -39,29 +40,36 @@ const PaymentForm = () => {
         // Make a POST request to your Express server to initiate payment
         const response = await axios.post('/api/initiatePayment', paymentData);
 
-        // Check if the response contains the payment URL
-        if (response.data.payment_url) {
-          // Redirect to the payment URL returned by the server
-          window.location.href = response.data.payment_url;
+                // Check if the response contains the payment URL
+        if (response.data.success) { 
+          const { payment_url, reference, message } = response.data;
+
+          toast.success(message)
+                    // Redirect to the payment URL returned by the server
+          window.location.href = payment_url;
+          
           
           // After the payment is successful, show the transaction reference
-          showTransactionReference(response.data.reference);
+          showTransactionReference(reference);
         } else {
           console.error('Payment initiation failed. Missing payment_url in response.');
           toast.error('Payment initiation failed. Please try again.');
         }
+
       } catch (error) {
         console.error('Error initiating payment:', error);
         toast.error('Payment initiation failed. Please try again.');
       }
+      
     },
   });
 
   // Function to show a toast message with the transaction reference
   const showTransactionReference = (reference) => {
+    console.log("Transaction Reference:", reference); // Add this line for debugging
     toast.success(`Transaction Reference: ${reference}`, {
       position: 'top-right',
-      autoClose: 5000, // Close after 5 seconds
+      autoClose: 20000, // Close after 5 seconds
       hideProgressBar: false,
       closeOnClick: true,
       pauseOnHover: true,

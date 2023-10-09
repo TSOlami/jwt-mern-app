@@ -1,48 +1,44 @@
 import mongoose from 'mongoose';
 
-/**
- * Defines the schema for payments in the database.
- */
 const paymentSchema = mongoose.Schema(
   {
     matricNumber: {
-      type: String, // Matriculation number of the student
+      type: String, // Matriculation number of the student (if applicable)
+      required: true,
+    },
+    email: {
+      type: String, // Email of the person making the payment
+      required: true,
+    },
+    amount: {
+      type: Number, // The amount of the payment
+      required: true,
+    },
+    transactionReference: {
+      type: String, // The transaction reference from Paystack
+      required: true,
     },
     category: {
-      type: mongoose.Schema.Types.ObjectId, // Reference to the Category model
-      ref: 'Category',
-      required: true,
+      type: mongoose.Schema.Types.ObjectId, // Reference to the Category model (if applicable)
+      ref: 'Category', // Make sure 'Category' matches your actual category model name
     },
     session: {
-      type: String,
-      required: true,
+      type: String, // Session or term (if applicable)
     },
-    // The amount of the payment.
-    amount: {
-      type: Number,
-      required: true,
-    },
-    // Reference to the user who made the payment.
     user: {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'User', // Reference to the user who made the payment
-      required: true,
+      type: mongoose.Schema.Types.ObjectId, // Reference to the User model (if applicable)
+      ref: 'User', // Make sure 'User' matches your actual user model name
     },
-    // The date when the payment was created (defaults to the current date).
     date: {
       type: Date,
       default: Date.now,
     },
   },
   {
-    // Automatically generate createdAt and updatedAt timestamps.
     timestamps: true,
   }
 );
 
-/**
- * Represents a payment record in the database.
- */
 const Payment = mongoose.model('Payment', paymentSchema);
 
 export default Payment;

@@ -8,7 +8,7 @@ import Blog from '../models/blogModel.js';
 // Access Private (only accessible to admin users)
 const getAllPayments = asyncHandler(async (req, res) => {
   // Fetch all payment records from the payment model
-  const allPayments = await Payment.find().populate('user');
+  const allPayments = await Payment.find({});
 
   res.status(200).json(allPayments);
 });

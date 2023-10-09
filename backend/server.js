@@ -2,20 +2,19 @@ import express from 'express';
 import dotenv from 'dotenv';
 dotenv.config();
 import cookieParser from 'cookie-parser';
-
-
 import { notFound, errorHandler } from './middleware/errormiddleware.js';
 import connectDb from './config/db.js';
+// Import route handlers
+import userRoutes from './routes/userRoutes.js'; // User-related routes
+import adminRoutes from './routes/adminRoutes.js'; // Admin-related routes
+import paymentback from "./routes/paymentback.js";
+
 connectDb();
 
 
 // Define the port number for the server, default to 5000 if not provided in the environment
 const port = process.env.PORT || 5000;
 
-// Import route handlers
-import userRoutes from './routes/userRoutes.js'; // User-related routes
-import adminRoutes from './routes/adminRoutes.js'; // Admin-related routes
-import initiatePayment from "./routes/paymentback.js";
 
 
 
@@ -35,7 +34,10 @@ const apiVersion = process.env.API_VERSION || 'v1';
 // Define routes for users and admin based on the API version
 app.use(`/api/${apiVersion}/users`, userRoutes); // User routes
 app.use(`/api/${apiVersion}/admin`, adminRoutes); // Admin routes
-app.use("/api/initiatePayment", initiatePayment); // Use the payment route
+// Use the payment routes
+app.use('/api/initiatePayment', paymentback);
+app.use('/api/allpayments', paymentback);
+
 
 // Define a route for the root URL '/'
 app.get('/', (req, res) => res.send('Server is ready'));
