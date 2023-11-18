@@ -1,9 +1,10 @@
 import mongoose from 'mongoose';
 
+// Define the session schema using Mongoose.
 const sessionSchema = mongoose.Schema(
   {
     name: {
-      type: String, // Session name or identifier (e.g., "2023/2024")
+      type: String,
       required: true,
     },
     duesPrice: {
@@ -16,10 +17,11 @@ const sessionSchema = mongoose.Schema(
     },
   },
   {
-    timestamps: true,
+    timestamps: true, // Automatically generate createdAt and updatedAt timestamps
   }
 );
 
+// Create the Session model using the session schema.
 const Session = mongoose.model('Session', sessionSchema);
 
 export default Session;
